@@ -13,7 +13,7 @@ mod input;
 mod pixela;
 
 #[derive(Debug, StructOpt)]
-#[structopt(name = "collect")]
+#[structopt(name = "typix")]
 pub struct App {
     #[structopt(subcommand)]
     pub command: Command,
