@@ -64,14 +64,13 @@ jobs:
         with:
           repository: ${{ github.repository }}
       - id: create-release
-        uses: actions/create-release@v1.0.0
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
-          body: |
-            ${{ steps.Changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.changelog }}
           draft: false
           prerelease: false
       - run: |
